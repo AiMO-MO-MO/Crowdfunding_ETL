@@ -1,14 +1,11 @@
 CREATE TABLE category(
 			category_id VARCHAR(10) PRIMARY KEY NOT NULL,
 			category VARCHAR(30) NOT NULL);
-			
-SELECT * FROM category			
+					
 			
 CREATE TABLE subcategory(
 			subcategory_id VARCHAR(10) PRIMARY KEY NOT NULL,
 			subcategory VARCHAR(30) NOT NULL);
-
-SELECT * FROM subcategory	
 			
 CREATE TABLE contacts(
 			contact_id INT PRIMARY KEY NOT NULL,
@@ -17,12 +14,11 @@ CREATE TABLE contacts(
 			email VARCHAR(50) NOT NULL);
 			
 		
-SELECT * FROM contacts
 
 CREATE TABLE campaign(
 			cf_id INT PRIMARY KEY NOT NULL,
 			contact_id INT NOT NULL,
-			company_name VARCHAR(50) NOT NULL,
+			company_name VARCHAR(100) NOT NULL,
 			description VARCHAR(100) NOT NULL,
 			goal FLOAT NOT NULL,
 			pledged FLOAT NOT NULL,
@@ -38,6 +34,8 @@ CREATE TABLE campaign(
 			FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id),
 			FOREIGN KEY (contact_id) REFERENCES contacts(contact_id));
 
-DROP TABLE campaign
+SELECT * FROM category	
+SELECT * FROM subcategory	
+SELECT * FROM contacts
 SELECT * FROM campaign
 			
